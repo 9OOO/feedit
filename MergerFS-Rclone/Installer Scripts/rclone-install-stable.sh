@@ -25,10 +25,10 @@ else
     cd "$HOME" || exit
     rm -rf "$HOME"/.rclone-tmp
     
+    
     source ~/.profile
     source ~/.bashrc
     
     command -v rclone
     rclone version
-
-    fi
+fi
