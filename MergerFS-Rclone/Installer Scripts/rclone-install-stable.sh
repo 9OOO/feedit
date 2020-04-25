@@ -28,7 +28,10 @@ else
     
     source ~/.profile
     source ~/.bashrc
-    
+    echo Rclone verion (sys)
     command -v rclone
     rclone version
+    echo Rclone verion (user bin)
+    $HOME/bin/rclone version
+
 fi
