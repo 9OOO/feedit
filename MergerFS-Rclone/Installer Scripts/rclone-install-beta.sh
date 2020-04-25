@@ -2,6 +2,11 @@
 
 # rclone beta Installer/Updater by Xan#7777
 
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
 if pgrep "rclone";
 then
     echo "Rclone is running. Please close all rclone instances before proceeding."
@@ -16,6 +21,10 @@ else
     cp "$HOME"/.rclone-tmp/rclone-v*/rclone "$HOME"/bin
     cd "$HOME" || exit
     rm -rf "$HOME"/.rclone-tmp
+    
+    source ~/.profile
+    source ~/.bashrc
+    
     command -v rclone
     rclone version
 fi
