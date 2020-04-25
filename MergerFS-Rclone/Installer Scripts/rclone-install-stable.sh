@@ -1,19 +1,19 @@
 #!/bin/bash
 
-# rclone stable Installer/Updater by Xan#7777
+# rclone beta Installer/Updater by Xan#7777
 
-if pgrep "rclone";
-then
-    echo "Rclone is running. Please close all rclone instances before proceeding."
-    exit
-    
-    else
 cd $HOME
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
+fi
 
+if pgrep "rclone";
+then
+    echo "Rclone is running. Please close all rclone instances before proceeding."
+    exit
+else
 
     echo "Installing/Upgrading rclone stable..."
     mkdir -p "$HOME"/.rclone-tmp
