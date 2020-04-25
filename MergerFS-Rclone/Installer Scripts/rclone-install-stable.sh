@@ -30,4 +30,5 @@ else
     
     command -v rclone
     rclone version
-fi
+
+    fi
